@@ -48,6 +48,7 @@
         android:drawableEnd="@drawable/ic_sofass"
         android:background="@color/yellow"
         android:text="Sofa"
+        android:textColor="@color/colorAccent"
 
 
 />
@@ -64,6 +65,7 @@
           android:background="@color/yellow"
           android:text="Televisor"
 
+          android:textColor="@color/colorAccent"
 
 
   />
@@ -79,6 +81,7 @@
           android:drawableTint="@color/red"
           android:background="@color/yellow"
           android:text="LapTop"
+          android:textColor="@color/colorAccent"
 
   />
 
@@ -92,6 +95,8 @@
           android:drawableEnd="@drawable/ic_launcher_foreground"
           android:drawableTint="@color/red"
           android:background="@color/yellow"
+          android:textColor="@color/colorAccent"
+
   />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

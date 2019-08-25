@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "983504723010-9mfech1seaaaghgvdd8v36fd0i2emq5n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bwminds.advertising",
+            "certificate_hash": "bd6cdec5c16662e715082d2ae6847e19cd545d73"
+          }
+        },
+        {
           "client_id": "983504723010-vi714mcctnp7178n4t7isjsurjio87gf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

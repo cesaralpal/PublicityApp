@@ -28,6 +28,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.bwminds.advertising.models.User;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
@@ -35,6 +36,9 @@ import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * This is an example activity that uses the Sceneform UX package to make common AR tasks easier.
@@ -45,6 +49,8 @@ public class HelloSceneformActivity extends AppCompatActivity {
 
   private ArFragment arFragment;
   private ModelRenderable andyRenderable;
+  private FirebaseAnalytics mFirebaseAnalytics;
+    private DatabaseReference mDatabase;// ...
 
   @Override
   @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
@@ -57,6 +63,8 @@ public class HelloSceneformActivity extends AppCompatActivity {
       return;
     }
 
+      mDatabase = FirebaseDatabase.getInstance().getReference();
+      mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     setContentView(R.layout.activity_ux);
     arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.ux_fragment);
 
@@ -85,6 +93,13 @@ public class HelloSceneformActivity extends AppCompatActivity {
                               })
 
               ;
+
+              writeNewUser("123","sofa","salas","dia de hoy","Fernanado Barrera","barreramechorf@gmail.com");
+              Bundle bundle = new Bundle();
+              bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "123");
+              bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "sofa");
+              bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "meses");
+              mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
           }
 
 
@@ -104,6 +119,10 @@ public class HelloSceneformActivity extends AppCompatActivity {
                                   toast.show();
                                   return null;
                               });
+
+              writeNewUser("145",
+                      "sofa","Salas","dia de hoy", "Cesar Alcibar",  "jcesarap1@gmail.com");
+
           }
       });
 
@@ -121,6 +140,9 @@ public class HelloSceneformActivity extends AppCompatActivity {
                                   toast.show();
                                   return null;
                               });
+              writeNewUser("134",
+                      "television","tecnologia","dia de hoy", "Cesar Alcibar",  "jcesarap1@gmail.com");
+
           }
       });
 
@@ -138,6 +160,9 @@ public class HelloSceneformActivity extends AppCompatActivity {
                                   toast.show();
                                   return null;
                               });
+              writeNewUser(
+                      "124","android device","celulares","dia de hoy", "Cesar Alcibar",  "jcesarap1@gmail.com");
+
           }
       });
 
@@ -203,4 +228,11 @@ public class HelloSceneformActivity extends AppCompatActivity {
     }
     return true;
   }
+
+
+    private void writeNewUser(String userId,String username, String email, String hora, String clientName, String clientMail) {
+        User user = new User(username, email, hora, clientName, clientMail);
+
+        mDatabase.child("users").child(userId).setValue(user);
+    }
 }
