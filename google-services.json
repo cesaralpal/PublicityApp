@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "983504723010",
+    "firebase_url": "https://hackelektra.firebaseio.com",
+    "project_id": "hackelektra",
+    "storage_bucket": "hackelektra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:983504723010:android:429350f6a004b077",
+        "android_client_info": {
+          "package_name": "com.bwminds.advertising"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "983504723010-vi714mcctnp7178n4t7isjsurjio87gf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bwminds.advertising",
+            "certificate_hash": "66e43fd0556f353dcfc0530d10593969e053a520"
+          }
+        },
+        {
+          "client_id": "983504723010-fjlng664pm2k0uccjht5n5pdletai71p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjwTFa-LH87t9DfYD5W6PbgSs6MDWUI9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "983504723010-fjlng664pm2k0uccjht5n5pdletai71p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
